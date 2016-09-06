@@ -161,7 +161,7 @@ test('formatter', (t) => {
     t.equal(param.name, 'test', 'should pass param object to formatter method')
     return capitalize ? _.capitalize(value) : value
   })
-  t.true(param().formatter('default'), 'should get formatter')
+  t.true(param().formatter('default'), 'should get the formatter')
   t.false(param().formatter('capitalize'), 'should not get nonexistent formatter')
   t.true(fParam.formatter('capitalize'), 'should get custom formatter')
   t.equal(fParam.value('TEST'), 'TEST', 'should not apply custom formatter if option was not set')
