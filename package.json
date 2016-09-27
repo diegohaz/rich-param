@@ -1,6 +1,6 @@
 {
   "name": "rich-param",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An object with name and value which accepts pluggable methods as formatters or validators.",
   "main": "dist/index.js",
   "files": [
