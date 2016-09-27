@@ -153,11 +153,10 @@ export default class Param {
         value = new Date(/^\d{5,}$/.test(value) ? Number(value) : value)
       } else if (options.type.name === 'Boolean') {
         value = !(value === 'false' || value === '0' || !value)
-      } else if (options.type.name === 'String' || options.type.name === 'Number') {
-        value = options.type(value)
+      } else if (options.type.name === 'Number') {
+        value = Number(value)
       } else {
-        const Type = options.type
-        value = new Type(value)
+        value = String(value)
       }
     }
 
