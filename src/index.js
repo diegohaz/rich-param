@@ -153,10 +153,8 @@ export default class Param {
         value = new Date(/^\d{5,}$/.test(value) ? Number(value) : value)
       } else if (options.type.name === 'Boolean') {
         value = !(value === 'false' || value === '0' || !value)
-      } else if (options.type.name === 'Number') {
-        value = Number(value)
       } else {
-        value = String(value)
+        value = options.type(value)
       }
     }
 
@@ -234,6 +232,8 @@ export default class Param {
     } else if (_.isArray(value)) {
       this.option('multiple', true)
       return this._getType(value[0])
+    } else if (_.isObject(value)) {
+      return Object
     } else {
       return String
     }
