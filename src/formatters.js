@@ -2,7 +2,7 @@ import _ from 'lodash'
 
 export const normalize = (normalize, value, param) => {
   if (normalize && !_.isNil(value)) {
-    value = _.kebabCase(value).replace(/\-/g, ' ')
+    value = _.kebabCase(value).replace(/-/g, ' ')
   }
   return value
 }
